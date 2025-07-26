@@ -1,82 +1,89 @@
-/* CSS Variables & Global Styles */
-:root {
-    --gold-color: #D4AF37;
-    --gold-hover-color: #c5a231;
-    --dark-blue: #0A2342;
-    --light-gray: #f4f4f4;
-    --font-color-dark: #333;
-    --font-color-light: #fff;
-    --header-font-color: #2c2c2c;
+/* ... (Bagian Awal CSS Tetap Sama) ... */
+:root{--gold-color:#D4AF37;--gold-hover-color:#c5a231;--dark-blue:#0A2342;--light-gray:#f4f4f4;--font-color-dark:#333;--font-color-light:#fff;--header-font-color:#2c2c2c}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Montserrat',sans-serif;color:var(--font-color-dark);line-height:1.6}h1,h2{font-family:'Playfair Display',serif}a{text-decoration:none;color:inherit}ul{list-style:none}
+.sticky-header{background-color:var(--gold-color);position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:.25rem 1rem;font-size:.9rem;border-bottom:1px solid rgba(0,0,0,.1)}.social-icons a,.language-selector a{margin:0 .5rem}
+.main-nav{display:flex;justify-content:space-between;align-items:center;padding:.5rem 1rem;position:relative;color:var(--header-font-color)}
+.nav-left,.nav-right{display:none;flex-direction:column;width:100%;text-align:center}.nav-left ul,.nav-right ul{flex-direction:column;gap:0;padding:0;width:100%}
+.nav-left ul li a,.nav-right ul li a{display:block;padding:1rem 0;transition:background-color .2s ease}.nav-left ul li a:hover,.nav-right ul li a:hover,.nav-left ul li a:active,.nav-right ul li a:active{background-color:var(--gold-hover-color)}
+.mobile-menu-toggle{display:block;background:0 0;border:none;font-size:1.5rem;cursor:pointer;color:var(--header-font-color)}
+.logo-container{height:60px}.logo-container img{height:100%;width:auto}
+.main-nav.nav-open{flex-wrap:wrap;justify-content:center;row-gap:1rem;padding-bottom:1rem}.main-nav.nav-open .nav-left,.main-nav.nav-open .nav-right{display:flex}
+.main-nav.nav-open .logo-container{display:none}.main-nav.nav-open .mobile-menu-toggle{position:absolute;top:1.2rem;right:1rem}
+
+/* ------------------- ATURAN DROPDOWN BARU ------------------- */
+.has-dropdown .fa-chevron-down, .has-dropdown .fa-chevron-right { font-size: 0.7em; margin-left: 0.5em; }
+.dropdown { display: none; /* Sembunyikan dropdown secara default */ }
+
+/* Tampilan dropdown di mobile */
+.main-nav.nav-open .dropdown {
+    position: static;
+    background-color: var(--gold-hover-color);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Montserrat', sans-serif; color: var(--font-color-dark); line-height: 1.6; }
-h1, h2 { font-family: 'Playfair Display', serif; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+.main-nav.nav-open .dropdown a { padding: 0.75rem 0; font-size: 0.9em; }
+.main-nav.nav-open .dropdown a:hover { background-color: #b5922c; }
+.main-nav.nav-open .has-dropdown.dropdown-open > .dropdown { display: block; }
 
-/* ------------------- HEADER STYLES ------------------- */
-.sticky-header { background-color: var(--gold-color); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
-.top-bar { display: flex; justify-content: space-between; align-items: center; padding: 0.25rem 1rem; font-size: 0.9rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-.social-icons a, .language-selector a { margin: 0 0.5rem; }
-.main-nav { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; position: relative; color: var(--header-font-color); }
-
-/* ------------------- MOBILE-FIRST MENU LOGIC ------------------- */
-.nav-left, .nav-right { display: none; flex-direction: column; width: 100%; text-align: center; }
-.nav-left ul, .nav-right ul { flex-direction: column; gap: 0; padding: 0; width: 100%; }
-.nav-left ul li a, .nav-right ul li a { display: block; padding: 1rem 0; transition: background-color 0.2s ease; }
-.nav-left ul li a:hover, .nav-right ul li a:hover, .nav-left ul li a:active, .nav-right ul li a:active { background-color: var(--gold-hover-color); }
-.mobile-menu-toggle { display: block; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--header-font-color); }
-.logo-container { height: 60px; }
-.logo-container img { height: 100%; width: auto; }
-.main-nav.nav-open { flex-wrap: wrap; justify-content: center; row-gap: 1rem; padding-bottom: 1rem; }
-.main-nav.nav-open .nav-left, .main-nav.nav-open .nav-right { display: flex; }
-.main-nav.nav-open .logo-container { display: none; }
-.main-nav.nav-open .mobile-menu-toggle { position: absolute; top: 1.2rem; right: 1rem; }
-
-/* ------------------- HERO & CONTENT SECTIONS ------------------- */
-.hero-section { position: relative; height: 100vh; width: 100%; overflow: hidden; background-color: #000; }
-.video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-.video-background video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease; }
-.video-background video.active { opacity: 1; }
-.hero-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); color: white; text-align: center; padding: 1rem; }
-.content-section { padding: 4rem 1rem; text-align: center; }
-.content-section h2 { font-size: 2rem; margin-bottom: 1rem; }
-
-/* ATURAN ALTERNATING WARNA SECARA UMUM */
-main section:nth-of-type(odd) { background-color: var(--light-gray); color: var(--font-color-dark); }
-main section:nth-of-type(even) { background-color: var(--dark-blue); color: var(--font-color-light); }
-
-/* PERUBAHAN SESUAI PERMINTAAN ANDA */
-/* Aturan ini akan menimpa aturan alternating di atas */
-#services,
-#testimony {
-    background-color: var(--gold-color);
-    color: var(--header-font-color); /* Sesuaikan warna teks agar kontras */
-}
-
-/* ------------------- FOOTER SECTION ------------------- */
-.footer-section {
-    background-color: #000000; /* Warna latar hitam */
-    color: var(--font-color-light);
-    text-align: center;
-    padding: 2rem 1rem;
-}
+/* ------------------- HERO & CONTENT SECTIONS (Tidak Berubah) ------------------- */
+#services, #testimony { background-color: var(--gold-color); color: var(--header-font-color); }
+.footer-section { background-color: #000; color: var(--font-color-light); }
+.hero-section{position:relative;height:100vh;width:100%;overflow:hidden;background-color:#000}.video-background{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
+.video-background video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease}.video-background video.active{opacity:1}
+.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,.5);color:#fff;text-align:center;padding:1rem}
+.content-section{padding:4rem 1rem;text-align:center}.content-section h2{font-size:2rem;margin-bottom:1rem}main section:nth-of-type(odd){background-color:var(--light-gray);color:var(--font-color-dark)}
+main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--font-color-light)}.footer-section{text-align:center;padding:2rem 1rem}
 
 /* ------------------- DESKTOP LAYOUT (@media query) ------------------- */
 @media (min-width: 992px) {
-    .sticky-header { height: 100px; }
-    .main-nav { display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 2rem; flex-wrap: nowrap; }
-    .mobile-menu-toggle { display: none; }
-    .main-nav.nav-open .logo-container { display: block; }
-    .nav-left, .nav-right { display: flex; flex: 1; }
-    .nav-left ul, .nav-right ul { display: flex; flex-direction: row; align-items: center; height: 100%; width: 100%; gap: 0; padding: 0; }
-    .nav-left ul { justify-content: flex-start; }
-    .nav-right ul { justify-content: flex-end; }
-    .nav-left ul li a, .nav-right ul li a { display: flex; align-items: center; height: 100%; padding: 0 1.5rem; font-weight: 500; position: relative; }
-    .nav-left ul li a::after, .nav-right ul li a::after { content: ''; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background-color: var(--header-font-color); transition: width 0.3s ease-out; }
-    .nav-left ul li a:hover::after, .nav-right ul li a:hover::after { width: 60%; }
-    .logo-container { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 130%; max-height: 90px; background-color: var(--gold-color); padding: 0.5rem; border-radius: 50%; box-shadow: 0 0 15px rgba(0,0,0,0.2); }
-    .logo-container img { border-radius: 50%; }
-    .hero-content h1 { font-size: 4rem; }
+    .sticky-header{height:100px}.main-nav{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 2rem;flex-wrap:nowrap}
+    .mobile-menu-toggle{display:none}.main-nav.nav-open .logo-container{display:block}.nav-left,.nav-right{display:flex;flex:1}
+    .nav-left ul,.nav-right ul{display:flex;flex-direction:row;align-items:center;height:100%;width:100%;gap:0;padding:0}
+    .nav-left ul{justify-content:flex-start}.nav-right ul{justify-content:flex-end}
+    .nav-left ul li a,.nav-right ul li a{display:flex;align-items:center;height:100%;padding:0 1.5rem;font-weight:500;position:relative}
+    .nav-left ul li a::after,.nav-right ul li a::after{content:'';position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:0;height:2px;background-color:var(--header-font-color);transition:width .3s ease-out}
+    .nav-left ul li a:hover::after,.nav-right ul li a:hover::after{width:60%}
+    .logo-container{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:130%;max-height:90px;background-color:var(--gold-color);padding:.5rem;border-radius:50%;box-shadow:0 0 15px rgba(0,0,0,.2)}
+    .logo-container img{border-radius:50%}.hero-content h1{font-size:4rem}
+    
+    /* ATURAN DROPDOWN DESKTOP */
+    .has-dropdown { position: relative; }
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background-color: var(--gold-color);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 0 0 4px 4px;
+        z-index: 1010;
+        padding: 0.5rem 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .dropdown a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        height: auto;
+        white-space: nowrap;
+    }
+    .dropdown a:hover { background-color: var(--gold-hover-color); }
+    .dropdown .has-dropdown > a { display: flex; justify-content: space-between; align-items: center; }
+    
+    .dropdown-nested {
+        top: 0;
+        left: 100%;
+        border-radius: 0 4px 4px 4px;
+    }
+
+    /* Tampilkan dropdown saat hover */
+    .has-dropdown:hover > .dropdown {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
