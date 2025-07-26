@@ -1,57 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Property</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+document.addEventListener('DOMContentLoaded', function () {
 
-    <header class="sticky-header">
-        <div class="top-bar">
-            <div class="social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a></div>
-            <div class="language-selector"><a href="#" class="active" aria-label="English"><i class="fa-solid fa-flag-usa"></i></a><a href="#" aria-label="Indonesia"><i class="fa-solid fa-flag"></i> ID</a></div>
-        </div>
-        <nav class="main-nav">
-            <div class="nav-left">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#property">Property</a></li>
-                </ul>
-            </div>
-            <div class="logo-container"><img src="https://via.placeholder.com/150" alt="Company Logo"></div>
-            <div class="nav-right">
-                <ul>
-                    <li><a href="#availability">Availability</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-            <button class="mobile-menu-toggle" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
-        </nav>
-    </header>
+    // --- Mobile Menu Logic ---
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="video-background">
-                <!-- ATRIBUT 'loop' DIHAPUS DARI SEMUA VIDEO DI BAWAH INI -->
-                <video src="video/video1.mp4" class="active" autoplay muted playsinline></video>
-                <video src="video/video2.mp4" autoplay muted playsinline></video>
-                <video src="video/video3.mp4" autoplay muted playsinline></video>
-                <video src="video/video4.mp4" autoplay muted playsinline></video>
-            </div>
-            <div class="hero-content"><h1>Experience Unmatched Luxury</h1><p>Your new chapter of elegance begins here.</p></div>
-        </section>
-        <section id="services" class="content-section"><h2>Our Services</h2><p>Detail tentang layanan yang ditawarkan akan ditampilkan di sini.</p></section>
-        <section id="property" class="content-section"><h2>Recent Updates</h2><p>Informasi terbaru mengenai properti akan ditampilkan di sini.</p></section>
-        <section id="testimony" class="content-section"><h2>What Our Clients Say</h2><p>Kutipan testimoni dari klien akan ditampilkan di sini.</p></section>
-    </main>
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('nav-open');
+        });
+    }
 
-    <footer id="contact" class="footer-section"><p>Contact us for more information.</p><p>© 2025 Luxury Property. All Rights Reserved.</p></footer>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+    // PERBAIKAN: Reset menu saat layar diubah dari mobile ke desktop
+    window.addEventListener('resize', () => {
+        // Jika lebar jendela lebih besar dari 992px dan menu sedang terbuka
+        if (window.innerWidth >= 992 && mainNav.classList.contains('nav-open')) {
+            // Hapus kelas 'nav-open' untuk mereset ke tampilan desktop
+            mainNav.classList.remove('nav-open');
+        }
+    });
+
+    // --- LOGIKA VIDEO BARU YANG LEBIH STABIL ---
+    const videos = document.querySelectorAll('.video-background video');
+    let currentVideoIndex = 0;
+
+    // Pastikan ada video untuk diputar
+    if (videos.length > 1) {
+        // Fungsi untuk memutar video berikutnya
+        const playNextVideo = () => {
+            // Sembunyikan video yang sedang aktif
+            videos[currentVideoIndex].classList.remove('active');
+
+            // Pindah ke indeks video berikutnya, kembali ke 0 jika sudah di akhir
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+
+            // Ambil video berikutnya
+            const nextVideo = videos[currentVideoIndex];
+
+            // Tampilkan video berikutnya
+            nextVideo.classList.add('active');
+
+            // Putar video berikutnya
+            nextVideo.play();
+        };
+
+        // Tambahkan event listener HANYA pada video yang sedang diputar
+        videos.forEach(video => {
+            video.addEventListener('ended', playNextVideo);
+        });
+
+        // Mulai video pertama secara eksplisit
+        videos[0].play();
+    }
+});
