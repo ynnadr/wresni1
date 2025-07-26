@@ -1,0 +1,309 @@
+/* CSS Variables & Global Styles */
+:root {
+    --gold-color: #D4AF37; /* Warna emas metalik */
+    --dark-blue: #0A2342;  /* Biru tua yang elegan */
+    --light-gray: #f4f4f4; /* Abu-abu terang untuk latar */
+    --font-color-dark: #333;
+    --font-color-light: #fff;
+    --header-font-color: #2c2c2c;
+    --header-height: 100px; /* Tinggi total header di desktop */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--font-color-dark);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.sticky-header {
+    background-color: var(--gold-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    color: var(--header-font-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a, .language-selector a {
+    margin: 0 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover, .language-selector a:hover {
+    opacity: 0.7;
+}
+
+.language-selector .active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--header-font-color);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.logo-container {
+    height: 60px; /* Ukuran logo di mobile */
+}
+
+.logo-container img {
+    height: 100%;
+    width: auto;
+}
+
+.main-nav ul {
+    display: none; /* Sembunyikan menu di mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--gold-color);
+    padding: 1rem 0;
+}
+
+.main-nav.nav-open ul {
+    display: flex; /* Tampilkan menu saat di-toggle */
+}
+
+.main-nav ul li {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.nav-left, .nav-right {
+    display: none; /* Sembunyikan container menu kiri-kanan di mobile */
+}
+
+.mobile-menu-toggle {
+    display: block; /* Tampilkan tombol burger di mobile */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--header-font-color);
+}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--font-color-light);
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.video-background video.active {
+    opacity: 1;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5); /* Overlay gelap agar teks terbaca */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Alternating Colors */
+main section:nth-of-type(odd) {
+    background-color: var(--light-gray);
+    color: var(--font-color-dark);
+}
+
+main section:nth-of-type(even) {
+    background-color: var(--dark-blue);
+    color: var(--font-color-light);
+}
+
+/* Footer */
+.footer-section {
+    background-color: #333;
+    color: var(--font-color-light);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+
+/* --- DESKTOP LAYOUT --- */
+@media (min-width: 992px) {
+    .sticky-header {
+        height: var(--header-height);
+    }
+    
+    .top-bar {
+        padding: 0.25rem 2rem;
+    }
+    
+    .main-nav {
+        height: 100%;
+        padding: 0;
+    }
+
+    .mobile-menu-toggle {
+        display: none; /* Sembunyikan tombol burger di desktop */
+    }
+
+    .nav-left, .nav-right {
+        display: block; /* Tampilkan container menu di desktop */
+        flex: 1;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        height: 100%;
+        width: auto;
+        padding: 0;
+    }
+
+    .main-nav ul li {
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .main-nav ul li a {
+        padding: 0 1.5rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    .main-nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 30px; /* Posisi garis bawah */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--header-font-color);
+        transition: width 0.3s ease-out;
+    }
+
+    .main-nav ul li a:hover::after {
+        width: 60%;
+    }
+    
+    .nav-left ul {
+        justify-content: flex-start;
+        padding-left: 2rem;
+    }
+
+    .nav-right ul {
+        justify-content: flex-end;
+        padding-right: 2rem;
+    }
+
+    /* Trik untuk Logo di tengah dan span 2 baris */
+    .logo-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 130%; /* Buat lebih tinggi dari container nav */
+        max-height: 90px;
+        z-index: 10;
+        background-color: var(--gold-color);
+        padding: 0.5rem;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    
+    .logo-container img {
+        border-radius: 50%;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .content-section {
+        padding: 6rem 2rem;
+    }
+
+    .content-section h2 {
+        font-size: 2.8rem;
+    }
+}
