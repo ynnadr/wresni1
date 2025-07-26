@@ -19,14 +19,53 @@
             <div class="nav-left">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#property">Property</a></li>
+                    <!-- Menu Property dengan Dropdown Bertingkat -->
+                    <li class="has-dropdown">
+                        <a href="#property">Property <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li class="has-dropdown">
+                                <a href="#">For Sale <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown dropdown-nested">
+                                    <li><a href="#">Villa</a></li>
+                                    <li><a href="#">Land</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">For Rent <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown dropdown-nested">
+                                    <li><a href="#">Monthly</a></li>
+                                    <li><a href="#">Yearly</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="logo-container"><img src="https://via.placeholder.com/150" alt="Company Logo"></div>
             <div class="nav-right">
                 <ul>
-                    <li><a href="#availability">Availability</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <!-- Menu Availability dengan Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="#availability">Availability <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Canggu</a></li>
+                            <li><a href="#">Seminyak</a></li>
+                            <li><a href="#">Ubud</a></li>
+                            <li><a href="#">Kuta</a></li>
+                            <li><a href="#">Uluwatu</a></li>
+                        </ul>
+                    </li>
+                    <!-- Menu About Us dengan Dropdown -->
+                    <li class="has-dropdown">
+                        <a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Partners</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -35,14 +74,9 @@
     </header>
 
     <main>
+        <!-- Konten lain tidak berubah -->
         <section id="home" class="hero-section">
-            <div class="video-background">
-                <!-- ATRIBUT 'loop' DIHAPUS DARI SEMUA VIDEO DI BAWAH INI -->
-                <video src="video/video1.mp4" class="active" autoplay muted playsinline></video>
-                <video src="video/video2.mp4" autoplay muted playsinline></video>
-                <video src="video/video3.mp4" autoplay muted playsinline></video>
-                <video src="video/video4.mp4" autoplay muted playsinline></video>
-            </div>
+            <div class="video-background"><video src="video/video1.mp4" class="active" autoplay muted playsinline></video><video src="video/video2.mp4" autoplay muted playsinline></video><video src="video/video3.mp4" autoplay muted playsinline></video><video src="video/video4.mp4" autoplay muted playsinline></video></div>
             <div class="hero-content"><h1>Wresni Indah Nusantara</h1><p>Your trusted key to Bali living</p></div>
         </section>
         <section id="services" class="content-section"><h2>Our Services</h2><p>Detail tentang layanan yang ditawarkan akan ditampilkan di sini.</p></section>
