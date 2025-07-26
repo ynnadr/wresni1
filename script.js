@@ -15,30 +15,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const videos = document.querySelectorAll('.video-background video');
     let currentVideoIndex = 0;
 
-    if (videos.length > 0) {
-        // Atur agar semua video bisa diputar (terutama di iOS)
-        videos.forEach(video => {
-            video.playsInline = true;
-        });
-        
-        // Mulai video pertama
-        videos[currentVideoIndex].play();
-        videos[currentVideoIndex].classList.add('active');
-
+    if (videos.length > 1) { // Hanya jalankan loop jika ada lebih dari 1 video
         videos.forEach((video, index) => {
+            // Ketika sebuah video selesai diputar
             video.addEventListener('ended', () => {
-                // Sembunyikan video yang sekarang
-                videos[currentVideo_index].classList.remove('active');
+                // Sembunyikan video yang sekarang (hapus class 'active')
+                videos[currentVideoIndex].classList.remove('active');
 
-                // Pindah ke video berikutnya, loop jika sudah di akhir
+                // Pindah ke indeks video berikutnya, kembali ke 0 jika sudah di akhir
                 currentVideoIndex = (currentVideoIndex + 1) % videos.length;
                 
-                // Tampilkan dan putar video berikutnya
+                // Ambil video berikutnya
                 const nextVideo = videos[currentVideoIndex];
+                
+                // Tampilkan video berikutnya (tambah class 'active')
                 nextVideo.classList.add('active');
-                nextVideo.play();
+                
+                // Putar video berikutnya
+                nextVideo.play().catch(error => {
+                    // Menangkap error jika browser memblokir autoplay
+                    console.error("Autoplay was prevented: ", error);
+                });
             });
         });
     }
-
 });
