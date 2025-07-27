@@ -59,25 +59,49 @@ document.addEventListener('DOMContentLoaded', function() {
         if (firstVideo.readyState >= 3) { startFirstVideo(); } else { firstVideo.addEventListener('canplaythrough', startFirstVideo); }
     }
 
-    // --- NEW: Horizontal Scroll for Properties Section ---
+    // Horizontal Scroll for Properties Section
     const scrollContainer = document.querySelector('.properties-scroll-container');
     const scrollLeftBtn = document.getElementById('scroll-left');
     const scrollRightBtn = document.getElementById('scroll-right');
-
     if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
         scrollLeftBtn.addEventListener('click', () => {
-            // Scroll by one card width + gap (320px + 24px)
-            scrollContainer.scrollBy({
-                left: -344,
-                behavior: 'smooth'
-            });
+            scrollContainer.scrollBy({ left: -344, behavior: 'smooth' });
+        });
+        scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: 344, behavior: 'smooth' });
+        });
+    }
+
+    // --- NEW: Testimonial Slider Logic ---
+    const slider = document.querySelector('.testimonial-slider');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+    let testimonialIndex = 0;
+
+    if (slider && slides.length > 0 && prevBtn && nextBtn) {
+        function updateSlider() {
+            slider.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+            // Disable/enable buttons based on position
+            prevBtn.disabled = testimonialIndex === 0;
+            nextBtn.disabled = testimonialIndex === slides.length - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (testimonialIndex < slides.length - 1) {
+                testimonialIndex++;
+                updateSlider();
+            }
         });
 
-        scrollRightBtn.addEventListener('click', () => {
-            scrollContainer.scrollBy({
-                left: 344,
-                behavior: 'smooth'
-            });
+        prevBtn.addEventListener('click', () => {
+            if (testimonialIndex > 0) {
+                testimonialIndex--;
+                updateSlider();
+            }
         });
+
+        // Initial state setup
+        updateSlider();
     }
 });
