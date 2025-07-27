@@ -19,19 +19,15 @@
             <div class="nav-left">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <!-- Property Menu with Nested Dropdown -->
-                    <li class="has-dropdown">
-                        <a href="#property">Property <i class="fas fa-chevron-down"></i></a>
+                    <li class="has-dropdown"><a href="#property">Property <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown">
-                            <li class="has-dropdown">
-                                <a href="#">Submenu 1 <i class="fas fa-chevron-right"></i></a>
+                            <li class="has-dropdown"><a href="#">Submenu 1 <i class="fas fa-chevron-right"></i></a>
                                 <ul class="dropdown dropdown-nested">
                                     <li><a href="#">Submenu 1.1</a></li>
                                     <li><a href="#">Submenu 1.2</a></li>
                                 </ul>
                             </li>
-                            <li class="has-dropdown">
-                                <a href="#">Submenu 2 <i class="fas fa-chevron-right"></i></a>
+                            <li class="has-dropdown"><a href="#">Submenu 2 <i class="fas fa-chevron-right"></i></a>
                                 <ul class="dropdown dropdown-nested">
                                     <li><a href="#">Submenu 2.1</a></li>
                                     <li><a href="#">Submenu 2.2</a></li>
@@ -44,27 +40,13 @@
             <div class="logo-container"><img src="https://via.placeholder.com/150" alt="Company Logo"></div>
             <div class="nav-right">
                 <ul>
-                    <!-- Availability Menu with Dropdown -->
-                    <li class="has-dropdown">
-                        <a href="#availability">Availability <i class="fas fa-chevron-down"></i></a>
+                    <li class="has-dropdown"><a href="#availability">Availability <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown">
                             <li><a href="#">Submenu 3</a></li>
                             <li><a href="#">Submenu 4</a></li>
-                            
                         </ul>
                     </li>
-                    <!-- About Us Menu with Dropdown -->
-                    <li class="has-dropdown">
-                        <a href="#about">About Us</a>
-                        <!-- <a href="#about">About Us <i class="fas fa-chevron-down"></i></a> -->
-                        <!-- <ul class="dropdown"> -->
-                            <!-- <li><a href="#">Submenu 8</a></li> -->
-                            <!-- <li><a href="#">Submenu 9</a></li> -->
-                            <!-- <li><a href="#">Submenu 10</a></li> -->
-                            <!-- <li><a href="#">Submenu 11</a></li> -->
-                            <!-- <li><a href="#">Submenu 12</a></li> -->
-                        <!-- </ul> -->
-                    </li>
+                    <li class="has-dropdown"><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -73,12 +55,72 @@
     </header>
 
     <main>
-        <!-- Other content remains unchanged -->
         <section id="home" class="hero-section">
             <div class="video-background"><video src="video/video1.mp4" class="active" autoplay muted playsinline></video><video src="video/video2.mp4" autoplay muted playsinline></video><video src="video/video3.mp4" autoplay muted playsinline></video><video src="video/video4.mp4" autoplay muted playsinline></video></div>
             <div class="hero-content"><h1>Wresni Indah Nusantara</h1><p>Your trusted key to Bali living</p></div>
         </section>
-        <section id="services" class="content-section"><h2>Our Services</h2><p>Detail tentang layanan yang ditawarkan akan ditampilkan di sini.</p></section>
+        
+        <!-- UPDATED "OUR SERVICES" SECTION -->
+        <section id="services" class="content-section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <!-- Service 1: Real Estate Sales -->
+                <a href="real-estate-sales.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 class="service-title">Real Estate Sales</h3>
+                    <ul class="service-description">
+                        <li>Freehold & Leasehold Property Sales</li>
+                        <li>Land and Villa Transactions</li>
+                        <li>Investment Guidance for Local & Foreign Buyers</li>
+                    </ul>
+                </a>
+
+                <!-- Service 2: Legal & Due Diligence -->
+                <a href="legal.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                    <h3 class="service-title">Legal & Due Diligence</h3>
+                    <ul class="service-description">
+                        <li>Notarial Services</li>
+                        <li>Title Checks & Ownership Structures</li>
+                        <li>Coordination with Trusted Lawyers</li>
+                    </ul>
+                </a>
+
+                <!-- Service 3: Villa Management -->
+                <a href="villa-management.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h3 class="service-title">Villa Management</h3>
+                    <ul class="service-description">
+                        <li>Full-Service Operational Management</li>
+                        <li>Staff Coordination & Guest Services</li>
+                        <li>Maintenance, Accounting & Reporting</li>
+                    </ul>
+                </a>
+
+                <!-- Service 4: Owner Representation -->
+                <a href="owner-representation.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="service-title">Owner Representation</h3>
+                    <ul class="service-description">
+                        <li>Absentee Owner Care</li>
+                        <li>Property Inspections</li>
+                        <li>Transparent Communication & Reporting</li>
+                    </ul>
+                </a>
+
+                <!-- Service 5: Rental Management -->
+                <a href="rental-management.html" class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="service-title">Rental Management</h3>
+                    <ul class="service-description">
+                        <li>Marketing & Booking Management</li>
+                        <li>Guest Communication</li>
+                        <li>Revenue Optimization</li>
+                    </ul>
+                </a>
+            </div>
+        </section>
+        
         <section id="property" class="content-section"><h2>Recent Updates</h2><p>Informasi terbaru mengenai properti akan ditampilkan di sini.</p></section>
         <section id="testimony" class="content-section"><h2>What Our Clients Say</h2><p>Kutipan testimoni dari klien akan ditampilkan di sini.</p></section>
     </main>
