@@ -1,67 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    // --- Logika Menu Mobile ---
+    // Mobile Menu Logic
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('nav-open');
         });
     }
 
-    // --- LOGIKA BARU UNTUK DROPDOWN MOBILE ---
+    // Mobile Dropdown Logic
     const dropdownItems = document.querySelectorAll('.has-dropdown');
     dropdownItems.forEach(item => {
-        // Kita targetkan link utama di dalam item yang punya dropdown
         const link = item.querySelector('a');
         link.addEventListener('click', function(event) {
-            // HANYA jalankan logika ini di tampilan mobile
             if (window.innerWidth < 992) {
-                // Mencegah link berpindah halaman saat diklik di mobile
                 event.preventDefault();
-
-                // Toggle kelas 'dropdown-open' pada <li> parent
                 const parentItem = event.target.closest('.has-dropdown');
                 parentItem.classList.toggle('dropdown-open');
-
-                // Opsional: Tutup dropdown lain yang mungkin terbuka
                 document.querySelectorAll('.has-dropdown').forEach(otherItem => {
-                    if (otherItem !== parentItem) {
-                        otherItem.classList.remove('dropdown-open');
-                    }
+                    if (otherItem !== parentItem) { otherItem.classList.remove('dropdown-open'); }
                 });
             }
         });
     });
 
-    // --- Perbaikan untuk Layout yang Rusak Saat Resize ---
+    // Resize Fix
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 992 && mainNav.classList.contains('nav-open')) {
             mainNav.classList.remove('nav-open');
         }
     });
 
-    // --- Logika Looping Video (Tidak berubah) ---
+    // Video Looping Logic
     const videos = document.querySelectorAll('.video-background video');
     let currentVideoIndex = 0;
-
     if (videos.length > 1) {
         function switchVideo() {
             videos[currentVideoIndex].classList.remove('active');
             currentVideoIndex = (currentVideoIndex + 1) % videos.length;
             const nextVideo = videos[currentVideoIndex];
             nextVideo.classList.add('active');
-
             const playWhenReady = () => {
                 nextVideo.play().catch(error => console.error("Video play was prevented:", error));
                 nextVideo.removeEventListener('canplaythrough', playWhenReady);
                 nextVideo.removeEventListener('loadeddata', playWhenReady);
             };
-
-            if (nextVideo.readyState >= 3) {
-                playWhenReady();
-            } else {
+            if (nextVideo.readyState >= 3) { playWhenReady(); } else {
                 nextVideo.addEventListener('canplaythrough', playWhenReady);
                 nextVideo.addEventListener('loadeddata', playWhenReady);
             }
@@ -73,5 +57,27 @@ document.addEventListener('DOMContentLoaded', function() {
             firstVideo.removeEventListener('canplaythrough', startFirstVideo);
         };
         if (firstVideo.readyState >= 3) { startFirstVideo(); } else { firstVideo.addEventListener('canplaythrough', startFirstVideo); }
+    }
+
+    // --- NEW: Horizontal Scroll for Properties Section ---
+    const scrollContainer = document.querySelector('.properties-scroll-container');
+    const scrollLeftBtn = document.getElementById('scroll-left');
+    const scrollRightBtn = document.getElementById('scroll-right');
+
+    if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+        scrollLeftBtn.addEventListener('click', () => {
+            // Scroll by one card width + gap (320px + 24px)
+            scrollContainer.scrollBy({
+                left: -344,
+                behavior: 'smooth'
+            });
+        });
+
+        scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: 344,
+                behavior: 'smooth'
+            });
+        });
     }
 });
