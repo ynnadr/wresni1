@@ -11,9 +11,53 @@
 <body>
 
     <header class="sticky-header">
-        <!-- Konten Header tidak berubah -->
-        <div class="top-bar"><div class="social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a></div><div class="language-selector"><a href="#" class="active" aria-label="English"><i class="fa-solid fa-flag-usa"></i></a><a href="#" aria-label="Indonesia"><i class="fa-solid fa-flag"></i> ID</a></div></div>
-        <nav class="main-nav"><div class="nav-left"><ul><li><a href="#home">Home</a></li><li class="has-dropdown"><a href="#property">Property <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li class="has-dropdown"><a href="#">Submenu 1 <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Submenu 1.1</a></li><li><a href="#">Submenu 1.2</a></li></ul></li><li class="has-dropdown"><a href="#">Submenu 2 <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Submenu 2.1</a></li><li><a href="#">Submenu 2.2</a></li></ul></li></ul></li></ul></div><div class="logo-container"><img src="https://via.placeholder.com/150" alt="Company Logo"></div><div class="nav-right"><ul><li class="has-dropdown"><a href="#availability">Availability <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="#">Submenu 3</a></li><li><a href="#">Submenu 4</a></li></ul></li><li class="has-dropdown"><a href="#about">About Us</a></li><li><a href="#contact">Contact Us</a></li></ul></div><button class="mobile-menu-toggle" aria-label="Open Menu"><i class="fas fa-bars"></i></button></nav>
+        <div class="top-bar">
+            <div class="social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a></div>
+            <div class="language-selector"><a href="#" class="active" aria-label="English"><i class="fa-solid fa-flag-usa"></i></a><a href="#" aria-label="Indonesia"><i class="fa-solid fa-flag"></i> ID</a></div>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <!-- MENU BARU DITAMBAHKAN DI SINI -->
+                    <li><a href="#services">Our Services</a></li>
+                    <li class="has-dropdown">
+                        <a href="#property">Property <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li class="has-dropdown">
+                                <a href="#">Submenu 1 <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown dropdown-nested">
+                                    <li><a href="#">Submenu 1.1</a></li>
+                                    <li><a href="#">Submenu 1.2</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="#">Submenu 2 <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown dropdown-nested">
+                                    <li><a href="#">Submenu 2.1</a></li>
+                                    <li><a href="#">Submenu 2.2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo-container"><img src="https://via.placeholder.com/150" alt="Company Logo"></div>
+            <div class="nav-right">
+                <ul>
+                    <li class="has-dropdown">
+                        <a href="#availability">Availability <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Submenu 3</a></li>
+                            <li><a href="#">Submenu 4</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </nav>
     </header>
 
     <main>
@@ -32,28 +76,14 @@
             <div class="properties-scroll-container"><div class="properties-grid"><a href="#" class="property-card"><div class="property-image"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500" alt="Villa Photo"><span class="property-status">For Sale</span></div><div class="property-details"><h3 class="property-title">Modern Villa in Canggu</h3><p class="property-location"><i class="fas fa-map-marker-alt"></i> Canggu, Bali</p><p class="property-price">$550,000</p><div class="property-features"><span><i class="fas fa-bed"></i> 3 Beds</span><span><i class="fas fa-bath"></i> 4 Baths</span><span><i class="fas fa-ruler-combined"></i> 400 m²</span></div></div></a><a href="#" class="property-card"><div class="property-image"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500" alt="Villa Photo"><span class="property-status new-status">New</span></div><div class="property-details"><h3 class="property-title">Lush Garden Villa</h3><p class="property-location"><i class="fas fa-map-marker-alt"></i> Ubud, Bali</p><p class="property-price">$780,000</p><div class="property-features"><span><i class="fas fa-bed"></i> 5 Beds</span><span><i class="fas fa-bath"></i> 5 Baths</span><span><i class="fas fa-ruler-combined"></i> 650 m²</span></div></div></a><a href="#" class="property-card"><div class="property-image"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500" alt="Villa Photo"><span class="property-status">For Rent</span></div><div class="property-details"><h3 class="property-title">Minimalist Seminyak Villa</h3><p class="property-location"><i class="fas fa-map-marker-alt"></i> Seminyak, Bali</p><p class="property-price">$3,000 / Month</p><div class="property-features"><span><i class="fas fa-bed"></i> 2 Beds</span><span><i class="fas fa-bath"></i> 2 Baths</span><span><i class="fas fa-ruler-combined"></i> 250 m²</span></div></div></a><a href="#" class="property-card"><div class="property-image"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500" alt="Villa Photo"><span class="property-status">For Sale</span></div><div class="property-details"><h3 class="property-title">Family Home Near Beach</h3><p class="property-location"><i class="fas fa-map-marker-alt"></i> Jimbaran, Bali</p><p class="property-price">$420,000</p><div class="property-features"><span><i class="fas fa-bed"></i> 4 Beds</span><span><i class="fas fa-bath"></i> 3 Baths</span><span><i class="fas fa-ruler-combined"></i> 350 m²</span></div></div></a></div></div>
         </section>
         
-        <!-- UPDATED "WHAT OUR CLIENTS SAY" SECTION -->
         <section id="testimony" class="content-section">
             <h2>What Our Clients Say</h2>
             <div class="testimonial-container">
                 <div class="testimonial-slider">
-                    <!-- Testimonial Slide 1 -->
-                    <div class="testimonial-slide">
-                        <p class="testimonial-quote">"The entire process of purchasing our dream villa was seamless from start to finish. The team's expertise in Real Estate Sales gave us incredible peace of mind. We couldn't be happier!"</p>
-                        <p class="client-name">— Alex & Sarah Thompson</p>
-                    </div>
-                    <!-- Testimonial Slide 2 -->
-                    <div class="testimonial-slide">
-                        <p class="testimonial-quote">"As absentee owners, trusting someone with our properties was our biggest concern. Their Villa Management service has been a blessing. Professional, transparent, and always proactive. Highly recommended."</p>
-                        <p class="client-name">— Debby</p>
-                    </div>
-                    <!-- Testimonial Slide 3 -->
-                    <div class="testimonial-slide">
-                        <p class="testimonial-quote">"Navigating the legalities of land ownership in Bali was daunting. The Legal & Due Diligence team was thorough and patient, ensuring our investment was secure. True professionalism."</p>
-                        <p class="client-name">— Maria Gonzalez</p>
-                    </div>
+                    <div class="testimonial-slide"><p class="testimonial-quote">"The entire process of purchasing our dream villa was seamless from start to finish. The team's expertise in Real Estate Sales gave us incredible peace of mind. We couldn't be happier!"</p><p class="client-name">— Alex & Sarah Thompson</p></div>
+                    <div class="testimonial-slide"><p class="testimonial-quote">"As absentee owners, trusting someone with our property was our biggest concern. Their Villa Management service has been a blessing. Professional, transparent, and always proactive. Highly recommended."</p><p class="client-name">— David Chen</p></div>
+                    <div class="testimonial-slide"><p class="testimonial-quote">"Navigating the legalities of land ownership in Bali was daunting. The Legal & Due Diligence team was thorough and patient, ensuring our investment was secure. True professionalism."</p><p class="client-name">— Maria Gonzalez</p></div>
                 </div>
-                <!-- Navigation Buttons -->
                 <button id="prev-testimonial" class="testimonial-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
                 <button id="next-testimonial" class="testimonial-nav-btn next"><i class="fas fa-chevron-right"></i></button>
             </div>
