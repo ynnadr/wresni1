@@ -25,30 +25,33 @@ main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--fon
 
 /* --- RECENT UPDATES (PROPERTIES) STYLES --- */
 .properties-header { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 2rem auto; flex-wrap: wrap; gap: 1rem; }
-.properties-header h2 { flex-grow: 1; margin-bottom: 0; text-align: left; }
+.properties-header .properties-header-title { flex-grow: 1; margin-right: auto; }
+.properties-header h2 { margin-bottom: 0; text-align: left; }
 .properties-controls { display: flex; align-items: center; gap: 1rem; }
-
 .btn-view-all {
-    padding: 0.5rem 1.5rem; border: 1px solid var(--font-color-light); color: var(--font-color-light);
-    border-radius: 20px; font-weight: 500;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* PERUBAHAN DI SINI */
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--gold-color);
+    background-color: transparent;
+    color: var(--gold-color);
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
 }
 .btn-view-all:hover {
-    background-color: var(--font-color-light); color: var(--dark-blue);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* PERUBAHAN DI SINI */
+    background-color: var(--gold-color);
+    color: var(--header-font-color);
 }
 .properties-nav .arrow-btn {
-    background: rgba(255,255,255,0.1); border: 1px solid #fff; color: #fff;
+    background: transparent;
+    border: 1px solid var(--gold-color);
+    color: var(--gold-color);
     border-radius: 50%; width: 40px; height: 40px; font-size: 1rem;
-    cursor: pointer; transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* PERUBAHAN DI SINI */
+    cursor: pointer; transition: background-color 0.3s, color 0.3s;
 }
 .properties-nav .arrow-btn:hover {
-    background: rgba(255,255,255,0.3);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* PERUBAHAN DI SINI */
+    background: var(--gold-color);
+    color: var(--header-font-color);
 }
-
 .properties-scroll-container{overflow-x:auto;scroll-behavior:smooth;padding-bottom:1rem;-ms-overflow-style:none;scrollbar-width:none}
 .properties-scroll-container::-webkit-scrollbar{display:none}.properties-grid{display:flex;gap:1.5rem;width:max-content}
 .property-card{flex:0 0 320px;border-radius:8px;overflow:hidden;background:#fff;color:var(--font-color-dark);box-shadow:0 4px 12px rgba(0,0,0,.1);transition:transform .3s ease,box-shadow .3s ease}
@@ -67,6 +70,7 @@ main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--fon
 .footer-right a{color:#fff}.footer-right a:hover{text-decoration:underline;color:var(--gold-color)}.footer-social-icons{display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem}
 .footer-social-icons a{color:#fff;font-size:1.5rem;transition:color .3s,transform .3s}.footer-social-icons a:hover{color:var(--gold-color);transform:scale(1.1)}
 .footer-bottom{border-top:1px solid #444;margin-top:3rem;padding-top:2rem;text-align:center}.copyright-text{font-size:.8rem;color:#888;margin-top:0}
+
 @media (min-width: 992px){.sticky-header{height:100px}.main-nav{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 2rem;flex-wrap:nowrap}
 .mobile-menu-toggle{display:none}.main-nav.nav-open .logo-container{display:block}.nav-left,.nav-right{display:flex;flex:1}
 .nav-left ul,.nav-right ul{display:flex;flex-direction:row;align-items:center;height:100%;width:100%;gap:0;padding:0}
