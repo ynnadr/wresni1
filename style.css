@@ -50,18 +50,19 @@ ul { list-style: none; }
 .content-section { padding: 4rem 1rem; }
 .content-section h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
 
-/* --- PERBAIKAN LATAR BELAKANG SECTION (FINAL) --- */
+/* --- PERBAIKAN LATAR BELAKANG SECTION (FINAL V3) --- */
 #property { background-color: var(--light-gray); color: var(--font-color-dark); }
 .page-placeholder { background-color: var(--light-gray); }
 
-/* Aturan spesifik untuk section dengan gambar latar (METODE BARU YANG BENAR) */
+/* Aturan spesifik untuk section dengan gambar latar (METODE BLEND-MODE) */
 #services, #testimony {
-    background: 
-        /* Lapisan Atas: Overlay HITAM yang lebih transparan */
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        /* Lapisan Bawah: Gambar Anda */
-        url('images/background.jpeg') center center / cover no-repeat fixed;
-    color: var(--font-color-light); /* Teks putih agar kontras */
+    background-color: #333; /* Warna gelap untuk di-blend dengan gambar */
+    background-image: url('images/background.jpeg');
+    background-blend-mode: multiply; /* Ini kuncinya: menggelapkan gambar sambil menjaga warna */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: var(--font-color-light);
 }
 
 /* Penyesuaian agar elemen di dalam section terlihat kontras */
