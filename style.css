@@ -45,35 +45,39 @@ main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--fon
 .footer-social-icons a{color:#fff;font-size:1.5rem;transition:color .3s,transform .3s}.footer-social-icons a:hover{color:var(--gold-color);transform:scale(1.1)}
 .footer-bottom{border-top:1px solid #444;margin-top:3rem;padding-top:2rem;text-align:center}.copyright-text{font-size:.8rem;color:#888;margin-top:0}
 
+/* ------------------- GAYA BARU UNTUK HALAMAN TEMPLATE ------------------- */
+.page-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Pastikan section punya tinggi */
+    padding: 4rem 1rem;
+    background-color: var(--light-gray); /* Warna latar agar tidak kosong */
+}
+.page-placeholder h1 {
+    font-size: 4rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
 /* ------------------- DESKTOP LAYOUT (@media query) ------------------- */
 @media (min-width: 992px){
     .sticky-header{height:100px}.main-nav{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 2rem;flex-wrap:nowrap}
     .mobile-menu-toggle{display:none}.main-nav.nav-open .logo-container{display:block}.nav-left,.nav-right{display:flex;flex:1}
     .nav-left ul,.nav-right ul{display:flex;flex-direction:row;align-items:center;height:100%;width:100%;gap:0;padding:0}
     .nav-left ul{justify-content:flex-start}.nav-right ul{justify-content:flex-end}
-    
-    /* PERUBAHAN FONT & PADDING MENU */
-    .nav-left ul li a,.nav-right ul li a{
-        display:flex;align-items:center;height:100%;
-        padding:0 1.5rem;
-        font-weight:500;
-        position:relative;
-        font-size: 1rem; /* Ukuran font sedikit lebih besar */
-    }
+    .nav-left ul li a,.nav-right ul li a{display:flex;align-items:center;height:100%;padding:0 1.5rem;font-weight:500;position:relative;font-size:1rem}
     .nav-left ul li a::after,.nav-right ul li a::after{content:'';position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:0;height:2px;background-color:var(--header-font-color);transition:width .3s ease-out}
     .nav-left ul li a:hover::after,.nav-right ul li a:hover::after{width:60%}
     .logo-container{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:130%;max-height:90px;background-color:var(--gold-color);padding:.5rem;border-radius:50%;box-shadow:0 0 15px rgba(0,0,0,.2)}
     .logo-container img{border-radius:50%}.hero-content h1{font-size:4rem}
     .has-dropdown{position:relative}.has-dropdown::after{content:'';position:absolute;bottom:-10px;left:0;width:100%;height:10px}
-    .dropdown{display:none;position:absolute;top:100%;left:0;min-width:240px; /* Lebarkan sedikit */ background-color:var(--gold-color);box-shadow:0 4px 12px rgba(0,0,0,.15);border-radius:0 0 4px 4px;z-index:1010;padding:.5rem 0;opacity:0;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
-    .dropdown li a{
-        background-color:var(--gold-color);
-        display:block;
-        padding: 1rem 1.5rem; /* Padding vertikal lebih besar */
-        width:100%;height:auto;white-space:nowrap;transition:background-color .2s ease
-    }
+    .dropdown{display:none;position:absolute;top:100%;left:0;min-width:240px;background-color:var(--gold-color);box-shadow:0 4px 12px rgba(0,0,0,.15);border-radius:0 0 4px 4px;z-index:1010;padding:.5rem 0;opacity:0;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
+    .dropdown li a{background-color:var(--gold-color);display:block;padding:1rem 1.5rem;width:100%;height:auto;white-space:nowrap;transition:background-color .2s ease}
     .dropdown li a:hover{background-color:var(--gold-hover-color)}.dropdown .has-dropdown>a{display:flex;justify-content:space-between;align-items:center}
     .dropdown-nested{top:-.5rem;left:100%;border-radius:0 4px 4px 4px}.has-dropdown:hover>.dropdown{display:block;opacity:1;transform:translateY(0);pointer-events:auto}
     .services-grid{grid-template-columns:repeat(5, 1fr)}.testimonial-quote{font-size:1.8rem}.footer-content{flex-direction:row;justify-content:space-between;align-items:flex-start;text-align:left}
     .footer-social-icons{justify-content:flex-start}
+    .page-placeholder h1 { font-size: 6rem; }
 }
