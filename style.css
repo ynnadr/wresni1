@@ -13,7 +13,6 @@
 .dropdown{display:none}.main-nav.nav-open .dropdown{position:static;background-color:var(--gold-hover-color);padding:.5rem 0;margin-top:.5rem}
 .main-nav.nav-open .dropdown a{padding:.75rem 0;font-size:.9em}.main-nav.nav-open .dropdown a:hover{background-color:#b5922c}
 .main-nav.nav-open .has-dropdown.dropdown-open>.dropdown{display:block}.main-nav.nav-open .has-dropdown.dropdown-open>a>.fa-chevron-down,.main-nav.nav-open .has-dropdown.dropdown-open>a>.fa-chevron-right{transform:rotate(180deg)}
-#services, #testimony{background-color:var(--gold-color);color:var(--header-font-color)}
 .hero-section{position:relative;height:100vh;width:100%;overflow:hidden;background-color:#000}.video-background{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
 .video-background video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease}.video-background video.active{opacity:1}
 .hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:rgba(0,0,0,.5);color:#fff;text-align:center;padding:1rem}
@@ -24,11 +23,12 @@ main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--fon
 .service-title{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:1rem}.service-description{list-style-type:'✓  ';padding-left:1.5rem;text-align:left;font-size:.95rem;line-height:1.8}
 .properties-header{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto 2rem auto;flex-wrap:wrap;gap:1rem}
 .properties-header .properties-header-title{flex-grow:1;margin-right:auto}.properties-header h2{margin-bottom:0;text-align:left}.properties-controls{display:flex;align-items:center;gap:1rem}
-.btn-view-all{padding:.5rem 1.5rem;border:1px solid var(--gold-color);background-color:transparent;color:var(--gold-color);border-radius:20px;font-weight:500;transition:background-color .3s,color .3s}
-.btn-view-all:hover{background-color:var(--gold-color);color:var(--header-font-color)}.properties-nav .arrow-btn{background:transparent;border:1px solid var(--gold-color);color:var(--gold-color);border-radius:50%;width:40px;height:40px;font-size:1rem;cursor:pointer;transition:background-color .3s,color .3s}
-.properties-nav .arrow-btn:hover{background:var(--gold-color);color:var(--header-font-color)}.properties-scroll-container{overflow-x:auto;scroll-behavior:smooth;padding-bottom:1rem;-ms-overflow-style:none;scrollbar-width:none}
-.properties-scroll-container::-webkit-scrollbar{display:none}.properties-grid{display:flex;gap:1.5rem;width:max-content}
-.property-card{flex:0 0 320px;border-radius:8px;overflow:hidden;background:#fff;color:var(--font-color-dark);box-shadow:0 4px 12px rgba(0,0,0,.1);transition:transform .3s ease,box-shadow .3s ease}
+.btn-view-all{padding:.5rem 1.5rem;border:1px solid var(--gold-color);background-color:transparent;color:var(--gold-color);border-radius:20px;font-weight:500;transition:background-color .3s,color .3s,box-shadow .3s;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.btn-view-all:hover{background-color:var(--gold-color);color:var(--header-font-color);box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.properties-nav .arrow-btn{background:transparent;border:1px solid var(--gold-color);color:var(--gold-color);border-radius:50%;width:40px;height:40px;font-size:1rem;cursor:pointer;transition:background-color .3s,color .3s,box-shadow .3s;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.properties-nav .arrow-btn:hover{background:var(--gold-color);color:var(--header-font-color);box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.properties-scroll-container{overflow-x:auto;scroll-behavior:smooth;padding-bottom:1rem;-ms-overflow-style:none;scrollbar-width:none}.properties-scroll-container::-webkit-scrollbar{display:none}
+.properties-grid{display:flex;gap:1.5rem;width:max-content}.property-card{flex:0 0 320px;border-radius:8px;overflow:hidden;background:#fff;color:var(--font-color-dark);box-shadow:0 4px 12px rgba(0,0,0,.1);transition:transform .3s ease,box-shadow .3s ease}
 .property-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.15)}.property-image{position:relative;width:100%;aspect-ratio:4/3}
 .property-image img{width:100%;height:100%;object-fit:cover}.property-status{position:absolute;top:1rem;left:1rem;background:var(--dark-blue);color:#fff;padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:500}
 .property-status.new-status{background:var(--gold-color);color:var(--header-font-color)}.property-details{padding:1.5rem;text-align:left}
@@ -45,24 +45,39 @@ main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--fon
 .footer-social-icons a{color:#fff;font-size:1.5rem;transition:color .3s,transform .3s}.footer-social-icons a:hover{color:var(--gold-color);transform:scale(1.1)}
 .footer-bottom{border-top:1px solid #444;margin-top:3rem;padding-top:2rem;text-align:center}.copyright-text{font-size:.8rem;color:#888;margin-top:0}
 
-/* ------------------- GAYA BARU UNTUK HALAMAN TEMPLATE ------------------- */
-.page-placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh; /* Pastikan section punya tinggi */
-    padding: 4rem 1rem;
-    background-color: var(--light-gray); /* Warna latar agar tidak kosong */
+/* --- PERUBAHAN LATAR BELAKANG GAMBAR --- */
+#services, #testimony {
+    position: relative; /* Wajib untuk overlay */
+    background-image: url('images/background.jpeg');
+    background-size: cover; /* Menutupi seluruh area */
+    background-position: center center; /* Posisi di tengah */
+    background-attachment: fixed; /* Efek parallax saat scroll */
+    color: var(--font-color-light); /* Ubah warna teks utama menjadi putih */
+    z-index: 1; /* Membuat stacking context */
 }
-.page-placeholder h1 {
-    font-size: 4rem;
-    color: #ccc;
-    text-transform: uppercase;
-    letter-spacing: 5px;
+#services::before, #testimony::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(10, 35, 66, 0.85); /* Overlay biru tua semi-transparan */
+    z-index: -1; /* Letakkan overlay di belakang konten tapi di atas gambar */
+}
+/* Penyesuaian agar elemen di dalam terlihat kontras */
+#services .service-card {
+    border-color: rgba(255,255,255,0.5);
+    background-color: rgba(0,0,0,0.2);
+}
+#services .service-icon, #services .service-title {
+    color: var(--font-color-light);
+}
+#testimony .testimonial-nav-btn {
+    border-color: var(--font-color-light);
+    color: var(--font-color-light);
 }
 
-/* ------------------- DESKTOP LAYOUT (@media query) ------------------- */
 @media (min-width: 992px){
+    /* ... (CSS Desktop yang ada tetap sama) ... */
     .sticky-header{height:100px}.main-nav{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 2rem;flex-wrap:nowrap}
     .mobile-menu-toggle{display:none}.main-nav.nav-open .logo-container{display:block}.nav-left,.nav-right{display:flex;flex:1}
     .nav-left ul,.nav-right ul{display:flex;flex-direction:row;align-items:center;height:100%;width:100%;gap:0;padding:0}
@@ -79,5 +94,4 @@ main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--fon
     .dropdown-nested{top:-.5rem;left:100%;border-radius:0 4px 4px 4px}.has-dropdown:hover>.dropdown{display:block;opacity:1;transform:translateY(0);pointer-events:auto}
     .services-grid{grid-template-columns:repeat(5, 1fr)}.testimonial-quote{font-size:1.8rem}.footer-content{flex-direction:row;justify-content:space-between;align-items:flex-start;text-align:left}
     .footer-social-icons{justify-content:flex-start}
-    .page-placeholder h1 { font-size: 6rem; }
 }
