@@ -48,7 +48,7 @@ main section:nth-of-type(even){background-color:var(--dark-blue);color:var(--fon
 /* --- PERUBAHAN LATAR BELAKANG GAMBAR --- */
 #services, #testimony {
     position: relative; /* Wajib untuk overlay */
-    background-image: url('images/background.jpeg');
+    background-image: url('background.jpeg');
     background-size: cover; /* Menutupi seluruh area */
     background-position: center center; /* Posisi di tengah */
     background-attachment: fixed; /* Efek parallax saat scroll */
