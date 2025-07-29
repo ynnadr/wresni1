@@ -61,7 +61,7 @@ ul { list-style: none; }
         /* Anda bisa mengubah 0.4 menjadi 0.3 untuk lebih terang, atau 0.5 untuk lebih gelap */
         linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)),
         /* Lapisan Bawah: Gambar Anda */
-        url('images/background.jpeg') center center / cover no-repeat fixed;
+        url('images/background.jpg') center center / cover no-repeat fixed;
     color: var(--font-color-light); /* Teks putih agar kontras */
 }
 
