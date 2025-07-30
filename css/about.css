@@ -1,0 +1,89 @@
+/* Gaya Khusus untuk Halaman About */
+
+.about-page-section {
+    padding: 6rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.about-page-section .container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Gaya untuk section dengan gambar latar */
+.bg-image {
+    background: 
+        /* Overlay hitam semi-transparan */
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        /* Gambar latar Anda, path ../ karena CSS ada di dalam folder */
+        url('../images/background.jpg') center center / cover no-repeat;
+    color: #fff; /* Teks putih agar kontras */
+}
+
+/* Gaya untuk section dengan latar abu-abu */
+.bg-light-gray {
+    background-color: var(--light-gray);
+    color: var(--font-color-dark);
+}
+
+.transparent-box {
+    background-color: rgba(0, 0, 0, 0.5); /* Hitam 50% transparan */
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+}
+
+.transparent-box h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.transparent-box p {
+    line-height: 1.9;
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.transparent-box p:last-child {
+    margin-bottom: 0;
+}
+
+.bg-light-gray h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.reasons-list {
+    list-style: none;
+    padding: 0;
+    display: inline-block; /* Agar bisa di-center */
+    text-align: left;
+    max-width: 100%;
+}
+
+.reasons-list li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.reasons-list li:last-child {
+    border-bottom: none;
+}
+
+/* Ikon centang emas sebelum setiap item */
+.reasons-list li::before {
+    content: '\f00c'; /* Kode ikon centang Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--gold-color);
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
