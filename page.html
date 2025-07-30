@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ganti judul ini untuk setiap halaman baru -->
     <title>Wresni Bali Property - Page Name</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -11,70 +10,51 @@
 </head>
 <body>
 
-    <!-- Header yang sama persis dengan index.html -->
     <header class="sticky-header">
         <div class="top-bar">
             <div class="social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a></div>
-            <div class="language-selector"><a href="#" class="active" aria-label="English"><i class="fa-solid fa-flag-usa"></i></a><a href="#" aria-label="Indonesia"><i class="fa-solid fa-flag"></i> ID</a></div>
+            <div class="language-selector">
+                <a href="#" class="active" aria-label="English"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30" height="15"><clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"></path></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"></path><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"></path><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"></path></svg></a>
+                <a href="#" aria-label="Indonesia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="30" height="20"><path fill="#fff" d="M0 0h900v600H0z"></path><path fill="#e70011" d="M0 0h900v300H0z"></path></svg></a>
+            </div>
         </div>
         <nav class="main-nav">
             <div class="nav-left">
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#services">Our Services</a></li>
-                    <li class="has-dropdown">
-                        <a href="index.html#property">Property <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown">
-                            <li class="has-dropdown"><a href="#">Real Estate for Sale <i class="fas fa-chevron-right"></i></a>
-                                <ul class="dropdown dropdown-nested">
-                                    <li class="has-dropdown"><a href="#">Villas <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li>
-                                    <li class="has-dropdown"><a href="#">Land <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li>
-                                </ul>
-                            </li>
-                            <li class="has-dropdown"><a href="#">Villa Management <i class="fas fa-chevron-right"></i></a>
-                                <ul class="dropdown dropdown-nested">
-                                    <li class="has-dropdown"><a href="#">Villas <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li>
-                                    <li class="has-dropdown"><a href="#">Land <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li class="has-dropdown"><a href="index.html#property">Property <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown"><li class="has-dropdown"><a href="#">Real Estate for Sale <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li class="has-dropdown"><a href="#">Villas <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li><li class="has-dropdown"><a href="#">Land <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li></ul></li><li class="has-dropdown"><a href="#">Villa Management <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li class="has-dropdown"><a href="#">Villas <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li><li class="has-dropdown"><a href="#">Land <i class="fas fa-chevron-right"></i></a><ul class="dropdown dropdown-nested"><li><a href="#">Free Hold</a></li><li><a href="#">Lease Hold</a></li></ul></li></ul></li></ul>
                     </li>
                 </ul>
             </div>
             <div class="logo-container"><img src="images/logo.jpeg" alt="Company Logo"></div>
             <div class="nav-right">
-                <ul>
-                    <li class="has-dropdown"><a href="#availability">Availability <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown"><li><a href="#">Villas</a></li><li><a href="#">Daily Rent</a></li></ul>
-                    </li>
-                    <li class="has-dropdown"><a href="#about">About Us</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
-                </ul>
+                <ul><li class="has-dropdown"><a href="#availability">Availability <i class="fas fa-chevron-down"></i></a><ul class="dropdown"><li><a href="#">Villas</a></li><li><a href="#">Daily Rent</a></li></ul></li><li class="has-dropdown"><a href="#about">About Us</a></li><li><a href="index.html#contact">Contact Us</a></li></ul>
             </div>
             <button class="mobile-menu-toggle" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
 
-    <!-- Bagian Konten Utama Template -->
     <main>
-        <section class="page-placeholder">
-            <h1>Template</h1>
-        </section>
+        <section class="page-placeholder"><h1>Template</h1></section>
     </main>
 
-    <!-- Footer yang sama persis dengan index.html -->
     <footer id="contact" class="footer-section">
         <div class="footer-content">
-            <div class="footer-left"><a href="#contact" class="footer-contact-link">Contact Us</a></div>
+            <div class="footer-left">
+                <a href="#contact" class="footer-contact-link">Contact Us</a>
+                <div class="footer-social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a></div>
+                <img src="images/qrcode.jpg" alt="QR Code" class="footer-qr-code">
+            </div>
             <div class="footer-right">
                 <h4>Head Office</h4>
                 <p>Jl. Sunset Road No. 88<br>Seminyak, Kuta, Badung<br>Bali, 80361, Indonesia</p>
                 <p><a href="mailto:info@wresni.id">info@wresni.id</a></p>
                 <p><a href="tel:+6282112345678">Phone/WhatsApp: +62 821 1234 5678</a></p>
-                <div class="footer-social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a></div>
             </div>
         </div>
-        <div class="footer-bottom"><p class="copyright-text">© 2025 Wresni.id All Rights Reserved.</p></div>
+        <div class="footer-bottom"><p class="copyright-text">© 2025 PT. Wresni Indah Nusantara. All Rights Reserved.</p></div>
     </footer>
     
     <script src="script.js"></script>
