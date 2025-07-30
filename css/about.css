@@ -18,7 +18,7 @@
 .bg-image {
     background: 
         /* Overlay hitam semi-transparan */
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)),
         /* Gambar latar Anda, path ../ karena CSS ada di dalam folder */
         url('../images/background.jpg') center center / cover no-repeat;
     color: #fff; /* Teks putih agar kontras */
