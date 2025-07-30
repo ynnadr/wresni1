@@ -18,7 +18,9 @@ ul { list-style: none; }
 /* ------------------- Gaya Header ------------------- */
 .sticky-header { background-color: var(--gold-color); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
 .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 0.25rem 1rem; font-size: 0.9rem; }
-.social-icons a, .language-selector a { margin: 0 0.5rem; }
+.language-selector { display: flex; align-items: center; gap: 0.75rem; }
+.language-selector svg { cursor: pointer; border-radius: 3px; }
+.social-icons a { margin: 0 0.5rem; }
 .main-nav { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; position: relative; color: var(--header-font-color); }
 
 /* ------------------- Logika Menu Mobile-First ------------------- */
@@ -50,31 +52,27 @@ ul { list-style: none; }
 .content-section { padding: 4rem 1rem; }
 .content-section h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
 
-/* --- PERBAIKAN LATAR BELAKANG SECTION (FINAL V4) --- */
+/* --- PERBAIKAN LATAR BELAKANG SECTION --- */
 #property { background-color: var(--light-gray); color: var(--font-color-dark); }
 .page-placeholder { background-color: var(--light-gray); }
 
-/* Aturan spesifik untuk section dengan gambar latar (METODE OVERLAY HITAM TIPIS) */
+/* Aturan spesifik untuk section dengan gambar latar (SESUAI PERMINTAAN ANDA) */
 #services, #testimony {
     background: 
-        /* Lapisan Atas: Overlay HITAM SANGAT TRANSPARAN (misal 40%) */
-        /* Anda bisa mengubah 0.4 menjadi 0.3 untuk lebih terang, atau 0.5 untuk lebih gelap */
         linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)),
-        /* Lapisan Bawah: Gambar Anda */
         url('images/background1.jpeg') center center / cover no-repeat fixed;
-    color: var(--font-color-light); /* Teks putih agar kontras */
+    color: var(--font-color-dark); /* Teks kembali gelap karena overlay transparan */
 }
 
 /* Penyesuaian agar elemen di dalam section terlihat kontras */
-#services .service-card { border-color: rgba(255,255,255,0.5); background-color: rgba(0,0,0,0.3); color: var(--font-color-light); }
-#services .service-icon, #services .service-title { color: var(--font-color-light); }
-#property .properties-header h2, #property .property-card { color: var(--font-color-dark); }
+#services .service-card { border-color: var(--font-color-dark); background-color: rgba(255,255,255,0.7); }
 #property .btn-view-all { border-color: var(--dark-blue); color: var(--dark-blue); }
 #property .btn-view-all:hover { background-color: var(--dark-blue); color: #fff; }
 #property .properties-nav .arrow-btn { background: var(--dark-blue); color: #fff; border-color: var(--dark-blue); }
 #property .properties-nav .arrow-btn:hover { background: #000; }
-#testimony .testimonial-nav-btn { border-color: var(--font-color-light); color: var(--font-color-light); background-color: rgba(0,0,0,0.2); }
-#testimony .testimonial-nav-btn:hover { background-color: rgba(0,0,0,0.4); }
+.testimonial-quote, .client-name { text-shadow: 0 1px 3px rgba(0,0,0,0.4); } /* Bayangan hitam untuk testimoni */
+#testimony .testimonial-nav-btn { border-color: var(--font-color-dark); color: var(--font-color-dark); background-color: rgba(255,255,255,0.2); }
+#testimony .testimonial-nav-btn:hover { background-color: rgba(255,255,255,0.4); }
 
 .services-grid{display:grid;grid-template-columns:1fr;gap:2rem;max-width:1200px;margin:0 auto}
 .service-card{border-radius:8px;padding:2rem;text-align:center;transition:transform .3s ease,box-shadow .3s ease}
@@ -93,12 +91,21 @@ ul { list-style: none; }
 .testimonial-container{position:relative;max-width:800px;margin:0 auto;overflow:hidden}.testimonial-slider{display:flex;transition:transform .5s ease-in-out}.testimonial-slide{flex:0 0 100%;padding:0 4rem;text-align:center}
 .testimonial-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.6rem;line-height:1.6;margin-bottom:1.5rem}.client-name{font-weight:700;font-family:'Montserrat',sans-serif}
 .testimonial-nav-btn{position:absolute;top:50%;transform:translateY(-50%);border-radius:50%;width:45px;height:45px;font-size:1.2rem;cursor:pointer;transition:background-color .3s}.testimonial-nav-btn.prev{left:0}
-.testimonial-nav-btn.next{right:0}.testimonial-nav-btn:disabled{opacity:.3;cursor:not-allowed}.footer-section{background-color:#000;color:#aaa;padding:4rem 1rem}
-.footer-content{display:flex;flex-direction:column;gap:3rem;text-align:center;max-width:1100px;margin:0 auto}.footer-left .footer-contact-link{font-size:1.5rem;font-weight:700;color:#fff;display:inline-block;margin-bottom:1rem;border-bottom:2px solid var(--gold-color);padding-bottom:.5rem}
-.footer-right h4{font-weight:700;color:#fff;font-size:1.5rem;margin-bottom:1rem}.footer-right p{margin-bottom:.5rem;line-height:1.8}.footer-right a{color:#fff}
-.footer-right a:hover{text-decoration:underline;color:var(--gold-color)}.footer-social-icons{display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem}
-.footer-social-icons a{color:#fff;font-size:1.5rem;transition:color .3s,transform .3s}.footer-social-icons a:hover{color:var(--gold-color);transform:scale(1.1)}
-.footer-bottom{border-top:1px solid #444;margin-top:3rem;padding-top:2rem;text-align:center}.copyright-text{font-size:.8rem;color:#888;margin-top:0}
+.testimonial-nav-btn.next{right:0}.testimonial-nav-btn:disabled{opacity:.3;cursor:not-allowed}
+/* ------------------- GAYA BARU FOOTER ------------------- */
+.footer-section { background-color: #000; color: #aaa; padding: 4rem 1rem; }
+.footer-content { display: flex; flex-direction: column; gap: 3rem; text-align: center; max-width: 1100px; margin: 0 auto; }
+.footer-left .footer-contact-link { font-size: 1.5rem; font-weight: 700; color: #fff; display: inline-block; margin-bottom: 1rem; border-bottom: 2px solid var(--gold-color); padding-bottom: .5rem; }
+.footer-right h4 { font-weight: 700; color: #fff; font-size: 1.5rem; margin-bottom: 1rem; }
+.footer-right p { margin-bottom: .5rem; line-height: 1.8; }
+.footer-right a { color: #fff; }
+.footer-right a:hover { text-decoration: underline; color: var(--gold-color); }
+.footer-social-icons { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
+.footer-social-icons a { color: #fff; font-size: 1.5rem; transition: color 0.3s, transform 0.3s; }
+.footer-social-icons a:hover { color: var(--gold-color); transform: scale(1.1); }
+.footer-qr-code { max-width: 120px; height: auto; margin: 1.5rem auto 0 auto; }
+.footer-bottom { /* border-top: 1px solid #444; Dihapus */ margin-top: 3rem; padding-top: 2rem; text-align: center; }
+.copyright-text { font-size: .8rem; color: #888; margin-top: 0; }
 .page-placeholder h1{font-size:4rem;color:#ccc;text-transform:uppercase;letter-spacing:5px}
 @media (min-width: 992px){.sticky-header{height:100px}.main-nav{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 2rem;flex-wrap:nowrap}
 .mobile-menu-toggle{display:none}.main-nav.nav-open .logo-container{display:block}.nav-left,.nav-right{display:flex;flex:1}.nav-left ul,.nav-right ul{display:flex;flex-direction:row;align-items:center;height:100%;width:100%;gap:0;padding:0}
